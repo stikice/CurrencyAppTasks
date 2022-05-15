@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/currencyInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        app:boxStrokeColor="#1789DB"
+        app:boxStrokeWidth="1dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/flagImageView"
+        app:layout_constraintTop_toTopOf="parent">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/currencyEditText"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/flagImageView"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:background="@drawable/image_bg"
+        app:layout_constraintStart_toEndOf="@id/currencyInputLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/currencyInputLayout"/>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/horizontalBarrier"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="currencyInputLayout, flagImageView"/>
+
+    <TextView
+        android:id="@+id/currencyTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Тенге, Казахстан"
+        android:layout_marginTop="6dp"
+        android:textSize="@dimen/normalTextSize"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/horizontalBarrier" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

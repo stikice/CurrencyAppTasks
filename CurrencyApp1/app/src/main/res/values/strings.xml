@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CurrencyApp1</string>
+    <string name="currency_title">%1$s, %2$s</string>
+</resources>
